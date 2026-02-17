@@ -16,7 +16,7 @@ CLIENTE -> Busquedas, reservar habitaciones, realizar pagos
 
 El cliente podra realizar reservaciones unicamente si ya esta registrado en la aplicacion. Independientemente de lo anterior, el usuario puede navegar en la intefaz para explorar; se implementaran filtros para facilitar las busquedas de los usuarios.
 
-El admin
+
 
 
 
