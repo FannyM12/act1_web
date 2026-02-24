@@ -10,7 +10,7 @@ app.use(express.json());
 const SECRET_KEY = "clave_super_secreta";
 
 app.post("/base", (req, res) => {
-  const { email, password } = req.body;
+  const { email, pass } = req.body;
 
   const token = jwt.sign(
     { email: email },
