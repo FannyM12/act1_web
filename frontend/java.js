@@ -4,7 +4,7 @@
         e.preventDefault();
 
         const email = document.getElementById("email").value;
-        const password = document.getElementById("pass").value;
+        const pass = document.getElementById("pass").value;
         const message = document.getElementById("message");
 
         // validar email
@@ -17,7 +17,7 @@
         //validar password
         const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*]).+$/;
 
-        if (!passwordRegex.test(password)) {
+        if (!passwordRegex.test(pass)) {        
             message.textContent = "La contraseña debe tener mayuscula, numero y simbolo";  
             return;
         }
@@ -33,9 +33,18 @@
 
             const data = await response.json();
 
-            message.textContent = "el token funciona: " + data.token;
+        if (data.token) {
+            localStorage.setItem("token", data.token);
+            message.textContent = "token creado exitosamente";
 
-        } catch (error) {
-            message.textContent = "Error al conectar con el servidor";
+            setTimeout(() => {
+                window.location.href = "Token.html";
+            }, 1000);
+        } else {
+            message.textContent = "Los datos que ingreso son incorrectos";
+        }
+
+     } catch (error) {
+        message.textContent = "Error al conectar con el servidor";
         }
     });
