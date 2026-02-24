@@ -23,7 +23,7 @@
         }
 
         try {
-            const response = await fetch("http://localhost:/base", {
+            const response = await fetch("http://localhost:5000/base", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
